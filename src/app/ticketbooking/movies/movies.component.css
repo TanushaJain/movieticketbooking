@@ -1,0 +1,145 @@
+
+img{
+    width: 173px;
+    height: 290.95px;
+    border-radius: 10px;
+}
+
+.movie-names{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+}
+.movie-names div{
+    flex-basis: 25%;
+    margin-bottom: 10px;
+}
+.title{
+    position: relative;
+    top:-40px;
+    word-wrap: break-word;
+    width: 160px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #03AA8E;
+}
+.body{
+    display: flex;
+}
+.filter .title1{
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #03DFB3;
+}
+.head .title1{
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #03DFB3;
+}
+.head .pills{
+    background-color: #025357;
+    width: fit-content;
+    margin-right: 20px;
+    padding: 5px;
+    font-size: 14px;
+    color:  #03DCB1 ;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.likes{
+    position: relative;
+    top: -30px;
+    display: flex;
+    background-color: black;
+    width: 173px;
+    height: 28px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    opacity: 0.8;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius:10px;
+}
+.likes p{
+    position: relative;
+    top: -10px;
+}
+.like{
+    margin-left: 10px;
+    font-size: 15px;
+    color: white;
+}
+.about{
+    position: relative;
+    top: -50px;
+    font-size: small;
+    color: #03AA8E;
+}
+.about1{
+    position: relative;
+    top: -60px;
+    font-size: small;
+    
+    color: #03AA8E;
+}
+.movies .pill{
+    display: flex;
+    position: relative;
+    margin-bottom: 40px;
+}
+.filter{
+    min-width: 315px;
+    margin-right: 100px;
+    margin-left: 130px;
+    position: relative;
+    top: -10px;
+}
+.filter .language,
+.filter .genre,
+.filter .format{
+    background-color:#025357;
+    border-radius: 5px;
+}
+.filter .pills{
+    border: solid 1px #03DCB1;
+    color:  #03DCB1;
+    margin: 10px;
+    padding: 10px;
+}
+.filter .language .pills{
+    flex-basis: 10%;
+}
+
+.filter .pill{
+    margin-right: 10px;
+    margin-left: 10px;
+    flex-wrap: wrap;
+    text-align: center;
+    display: flex;
+    position: relative;
+}
+.filter p{
+    padding: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.filter .toggle{
+    color: #03DCB1 ;
+}
+.filter p span{
+    margin-left: 3px;
+    margin-right: 18px;
+}
+.filter .clear{
+    float: right;
+}
+.filter .clear:hover{
+    color: #03DCB1;
+}
+a{
+    text-decoration: none;
+    color:#03AA8E;
+}
