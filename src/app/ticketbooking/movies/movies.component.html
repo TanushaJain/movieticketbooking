@@ -1,0 +1,105 @@
+
+<div class="body">
+    <div class="filter">
+        <p class="title1">Filter</p>
+        <div class="filters">
+            <div class="language">
+                <p type="button" (click)="toggleLanguage()">
+                    <span [hidden]="!language"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                      </svg></span>
+                      <span [hidden]="language">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                          </svg>
+                      </span>
+                    <span [ngClass]="{
+                        'toggle':language
+                    }">Language</span>
+                    <span class="clear">Clear</span>
+                </p>
+                <div *ngIf="language" class="pill">
+                    <p class="pills">English</p>
+                    <p class="pills">Hindi</p>
+                    <p class="pills">Tamil</p>
+                    <p class="pills">Telugu</p>
+                </div>
+            </div>
+            <div class="genre">
+                <p type="button" (click)="toggleGeners()">
+                    <span [hidden]="!genre"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                      </svg></span>
+                      <span [hidden]="genre">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                          </svg>
+                      </span>
+                    <span [ngClass]="{
+                        'toggle':genre
+                    }">Genres</span>
+                    <span class="clear">Clear</span>
+                </p>
+                <div *ngIf="genre" class="pill">
+                    <p class="pills">Action</p>
+                    <p class="pills">Drama</p>
+                    <p class="pills">Historical</p>
+                    <p class="pills">Romance</p>
+                    <p class="pills">Thriller</p>
+                    <p class="pills">Mystery</p>
+                    <p class="pills">Comedy</p>
+                    <p class="pills">Sci-Fi</p>
+                    <p class="pills">Fantasy</p>
+                    <p class="pills">Crime</p>
+                </div>
+            </div>
+            <div class="format">
+                <p type="button" (click)="toggleFormat()">
+                    <span [hidden]="!format"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                      </svg></span>
+                      <span [hidden]="format">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                          </svg>
+                      </span>
+                    <span [ngClass]="{
+                        'toggle':format
+                    }">Format</span>
+                    <span class="clear">Clear</span>
+                </p>
+                <div *ngIf="format" class="pill">
+                    <p class="pills">2D</p>
+                    <p class="pills">3D</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="movies">
+        <div class="head">
+            <p class="title1">Movies in Your City</p>
+            <div class="pill">
+                <p class="pills">English</p>
+                <p class="pills">Hindi</p>
+                <p class="pills">Tamil</p>
+                <p class="pills">Telugu</p>
+            </div>
+        </div>
+        <div class="movie-names">
+            <div *ngFor="let movie of movie$">
+                <a routerLink="/movies/{{movie.name}}"><img [src]="movie.file" alt="" ></a>
+                <div class="likes">
+                    <p>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-suit-heart-fill" fill=" #e74c3c" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                          </svg>
+                    </p>
+                    <p class="like"> {{movie.like}}%</p>
+                </div>
+                <p class="title"><a routerLink="/movies/{{movie.name}}">{{movie.name}}</a></p>
+                <p class="about">UA</p>
+                <p class="about1">{{movie.language}}</p>
+            </div>
+        </div>
+    </div>
+</div>

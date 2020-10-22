@@ -1,0 +1,86 @@
+@import"~bootstrap/dist/css/bootstrap.css";
+
+.rate,.rating{
+    display: flex;
+}
+.rate div{
+    margin-right: 10px;
+    color: gray;
+    background-color: transparent;
+}
+.rated{
+    font-size: x-large;
+    color: #03AA8E;
+}
+.button1{
+    background-color: transparent;
+    border-color: #03AA8E;
+    color: #03AA8E;
+    width: 400px;
+    height: 50px;
+    position: relative;
+    float: right;
+}
+.button1:hover{
+    background-color: #03AA8E;
+    border-color: transparent;
+    color: #061B1E;
+}
+.container{
+    margin-left: 350px;
+    position: relative;
+    top: -450px;
+}
+.rate .active,
+.rate div svg :hover
+{
+    color:red;
+}
+ul{
+    list-style: none;
+    padding-bottom: 10px;
+    border-bottom: solid 2px lightgray;
+    width: 700px;
+    padding-left: 0px;
+    margin-left: 0%;
+    margin-top: 130px;
+}
+li{
+    display: inline;
+    color:#03AA8E;
+    margin-right: 50px;
+    font-size: x-large;
+}
+li:hover,.toggleactive{
+    font-weight: 550;
+    padding-bottom: 10px;
+    border-bottom: solid 3.5px #03AA8E;   
+}
+.summaries{
+    color:#03DCB1;
+    width: 700px;
+}
+.summaries p{
+    word-break: break-all;
+}
+.summaries h3{
+    margin-top: 20px;
+}
+.cast-div{
+    display: flex;
+    align-content: center;
+    margin-top: 20px;
+}
+.cast img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 20px;
+    margin-right: 50px;
+    margin-left: 40px;
+}
+.cast-div .name{
+    color: #03DCB1;
+    text-align: center;
+    margin-top: 0%;
+}

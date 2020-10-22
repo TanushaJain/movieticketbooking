@@ -1,0 +1,95 @@
+<app-header></app-header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="rating">
+                                <div class="rate">
+                                    <div type="button" (click)="rated(1)"[ngClass]="{
+                                        'active':active[0]
+                                    }">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-suit-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                          </svg>
+                                    </div>
+                                    <div type="button" (click)="rated(2)" [ngClass]="{
+                                        'active':active[1]
+                                    }">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-suit-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                          </svg>
+                                    </div>
+                                    <div type="button" (click)="rated(3)" [ngClass]="{
+                                        'active':active[2]
+                                    }">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-suit-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                          </svg>
+                                    </div>
+                                    <div type="button" (click)="rated(4)" [ngClass]="{
+                                        'active':active[3]
+                                    }">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-suit-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                          </svg>
+                                    </div>
+                                    <div type="button" (click)="rated(5)" [ngClass]="{
+                                        'active':active[4]
+                                    }">
+                                        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-suit-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                          </svg>
+                                    </div>      
+                                </div>
+                                <div class="rated">
+                                    {{rate | number : '1.1-1'}}
+                                </div> 
+                            </div> 
+                            <p style="color: #03AA8E;">RATE IT</p>
+                        </div>
+                    <button class="button1" routerLink="/movies/{{movie.name}}/cinemas">Book Tickets</button>
+                    </div>
+                    <div class="row">
+                        <div class="summaries">
+                            <ul>
+                                <li (click)="toggleSummary()" [ngClass]="{
+                                    'toggleactive':summary
+                                }">Summary</li>
+                                <li (click)="toggleReview()" [ngClass]="{
+                                    'toggleactive':review
+                                }">User Reviews</li>
+                                <li (click)="toggleCritic()" [ngClass]="{
+                                    'toggleactive':critic
+                                }">Critic Reviews</li>
+                            </ul>
+                            <div [hidden]="!summary" >
+                                <h3 class="">Synopsis</h3>
+                                <p>{{movie.about}}</p>
+                            </div>
+                            <div [hidden]="summary">
+                                <h3>No Reviews Yet</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="
+                    margin-top: 80px;">
+                        <p style="color: #03AA8E; font-weight: bold; font-size: large;">CAST</p>
+                        <div  class="cast-div">
+                            <div *ngFor="let cast of movie.casts" class="cast">
+                                <img [src]="cast.file" alt="">
+                                <p class="name">{{cast.name}}</p>
+                                <p class="name">Actor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="
+                    margin-top: 80px;">
+                        <p style="color: #03AA8E; font-weight: bold; font-size: large;">CREW</p>
+                        <div  class="cast-div">
+                            <div *ngFor="let cast of movie.crew" class="cast">
+                                <img [src]="cast.file" alt="">
+                                <p class="name">{{cast.name}}</p>
+                                <p class="name">{{cast.type}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
