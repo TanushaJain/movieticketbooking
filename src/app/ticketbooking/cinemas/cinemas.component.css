@@ -1,0 +1,94 @@
+.datess .container{
+    margin-left: 350px;
+    position: relative;
+    top: -460px;
+}
+.cinemass .container{
+    position: relative;
+    top: -400px;
+    margin-left: 100px;
+}
+.dates{
+    display: flex;
+}
+.dates .col1{
+    margin-right: 30px;
+    color: #025357;
+}
+.date{
+    background-color: transparent;
+    border: solid 2px #025357;
+    color: #03DCB1;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.date:hover,
+.active{
+    background-color: #025357;
+    color: #03DCB1;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    border-radius: 5px;
+}
+.arrow{
+    position: relative;
+    top: 10px;
+}
+.arrow svg:hover{
+    color: #03DCB1;
+}
+.cinemass .row{
+    background-color: #025357;
+    color: #03DCB1;
+    margin: 20px;
+    padding: 20px;
+    width: 1200px;
+    border: double 8px #03DCB1;
+}
+.ticket{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.timing{
+    position: relative;
+    display: flex;
+}
+.times{
+    flex-basis: 85%;
+}
+.time{
+    background-color: transparent;
+    color: #03DCB1;
+    border: solid 2px #03DCB1;
+    width: 70px;
+    height: 25px;
+    cursor: pointer;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+.time:hover{
+    background-color: #03DCB1;
+    color: #025357;
+    border-color: #025357;
+}
+ .modal-content {
+    background-color: #292b2c;
+    color: white;
+  }
+  .modal-header,
+  .modal-footer{
+      border: none;
+  }
+  .dark-modal .close {
+    color: white;
+  }
+  .light-blue-backdrop {
+    background-color: #5cb3fd;
+  }
+  .modal-body{
+      text-align: center;
+  }

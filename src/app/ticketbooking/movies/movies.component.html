@@ -1,4 +1,11 @@
-
+<div class="header">
+    <h3>LOGO</h3>
+    <svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+      </svg>
+  <input class="form-control mr-sm-2" type="search" placeholder=" Search" aria-label="Search" (keyup.enter)="onSearch()" [(ngModel)]="tempSearch">
+</div>
 <div class="body">
     <div class="filter">
         <p class="title1">Filter</p>
@@ -18,7 +25,7 @@
                     }">Language</span>
                     <span class="clear">Clear</span>
                 </p>
-                <div *ngIf="language" class="pill">
+                <div *ngIf="language" class="pill" style="margin-bottom: 20px;">
                     <p class="pills">English</p>
                     <p class="pills">Hindi</p>
                     <p class="pills">Tamil</p>
@@ -40,7 +47,7 @@
                     }">Genres</span>
                     <span class="clear">Clear</span>
                 </p>
-                <div *ngIf="genre" class="pill">
+                <div *ngIf="genre" class="pill"  style="margin-bottom: 20px;">
                     <p class="pills">Action</p>
                     <p class="pills">Drama</p>
                     <p class="pills">Historical</p>
@@ -68,7 +75,7 @@
                     }">Format</span>
                     <span class="clear">Clear</span>
                 </p>
-                <div *ngIf="format" class="pill">
+                <div *ngIf="format" class="pill"  style="margin-bottom: 20px;">
                     <p class="pills">2D</p>
                     <p class="pills">3D</p>
                 </div>
@@ -100,6 +107,10 @@
                 <p class="about">UA</p>
                 <p class="about1">{{movie.language}}</p>
             </div>
+        </div>
+        <div *ngIf="available">
+                <h1 style="color:#03AA8E;">NOT AVAILABLE</h1>
+                <button type="button" (click)="reload()">Go Back</button>
         </div>
     </div>
 </div>

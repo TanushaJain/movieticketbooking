@@ -29,7 +29,7 @@
 .container{
     margin-left: 350px;
     position: relative;
-    top: -450px;
+    top: -480px;
 }
 .rate .active,
 .rate div svg :hover
@@ -39,7 +39,6 @@
 ul{
     list-style: none;
     padding-bottom: 10px;
-    border-bottom: solid 2px lightgray;
     width: 700px;
     padding-left: 0px;
     margin-left: 0%;
@@ -50,15 +49,24 @@ li{
     color:#03AA8E;
     margin-right: 50px;
     font-size: x-large;
+    padding: 5px;
 }
 li:hover,.toggleactive{
     font-weight: 550;
     padding-bottom: 10px;
     border-bottom: solid 3.5px #03AA8E;   
+    border-top: solid 2px #03AA8E;
+    border-right: solid 2px #03AA8E;
+    border-left: solid 2px #03AA8E;
 }
 .summaries{
     color:#03DCB1;
     width: 700px;
+}
+.summary{
+    color: #03DCB1;
+    background-color:#025357 ;
+    padding: 20px;
 }
 .summaries p{
     word-break: break-all;

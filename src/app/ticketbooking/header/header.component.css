@@ -17,11 +17,11 @@
 .detail-header{
 position: relative;
 left: 330px;
-top: -500px;
-color: #199297;
+top: -510px;
+color: #B0DADA;
 }
 .certificate{
-    border: solid 2px #199297;
+    border: solid 2px #B0DADA;
     padding:4px;
     font-size: 12px;
     font-family: sans-serif;

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TicketbookingModule } from './ticketbooking/ticketbooking.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { TicketbookingModule } from './ticketbooking/ticketbooking.module';
   imports: [
   BrowserModule,
     AppRoutingModule,
-    TicketbookingModule    
+    TicketbookingModule,
+    NgbModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

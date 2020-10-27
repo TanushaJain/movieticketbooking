@@ -15,4 +15,11 @@ movie$;
   getMovie(id){
     return this.http.get(`https://jsonblob.com/api/${id}`);
   }
+  setSearched(movie){
+    this.movie$=movie;
+  }
+  getSearched(){
+    if(this.movie$)
+    return this.movie$;
+  }
 }

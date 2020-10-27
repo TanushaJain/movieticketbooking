@@ -61,6 +61,7 @@ movies=[{
     }];
 idobj:object;
 id;
+movieName;
 movie;
 length;
 rate=0;
@@ -76,6 +77,7 @@ selected = 0;
   ngOnInit(): void {
     const name=this.route.snapshot.paramMap.get('name');
     console.log(name);
+    this.movieName=name;
    this.idobj= this.movies.filter(x => x.name===name);
    this.id=this.idobj[0].id
    console.log(this.id);

@@ -1,5 +1,5 @@
 <app-header></app-header>
-                <div class="container">
+                <div class="container" *ngIf="movie">
                     <div class="row">
                         <div class="col-7">
                             <div class="rating">
@@ -46,7 +46,7 @@
                             </div> 
                             <p style="color: #03AA8E;">RATE IT</p>
                         </div>
-                    <button class="button1" routerLink="/movies/{{movie.name}}/cinemas">Book Tickets</button>
+                    <button class="button1" routerLink="/movies/{{movieName}}/cinemas">Book Tickets</button>
                     </div>
                     <div class="row">
                         <div class="summaries">
@@ -61,11 +61,11 @@
                                     'toggleactive':critic
                                 }">Critic Reviews</li>
                             </ul>
-                            <div [hidden]="!summary" >
+                            <div [hidden]="!summary" class="summary">
                                 <h3 class="">Synopsis</h3>
                                 <p>{{movie.about}}</p>
                             </div>
-                            <div [hidden]="summary">
+                            <div [hidden]="summary" class="summary">
                                 <h3>No Reviews Yet</h3>
                             </div>
                         </div>

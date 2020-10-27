@@ -1,0 +1,131 @@
+.body{
+    background-color: #061B1E;
+}
+.movie-header{
+    height: 250px;
+    filter: blur(8px);
+    position: relative;
+    top: -20px;
+    background-color: (0,0,0.8);
+    width: 1200px;
+    margin-left: 13%;
+}
+
+.detail-header{
+position: relative;
+top: -150px;
+left: 250px;
+color: #B0DADA;
+}
+.certificate{
+    border: solid 2px #B0DADA;
+    padding:4px;
+    font-size: 12px;
+    font-family: sans-serif;
+    border-radius: 50%;
+}
+.language{
+    margin-left: 10px;
+    font-size: small;
+    font-family: sans-serif;
+}
+.date{
+    margin-left: 10px;
+    position: relative;
+    top: -2px;
+    font-size: 15px;
+}
+.time{
+    margin-left: 10px;
+}
+.column svg{
+    color: lightgray;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.column svg:hover{
+    color: #03AA8E;
+    position: relative;
+    animation-name: exapmle;
+    animation-duration: 0.5s;
+    top: -10px;
+}
+@keyframes exapmle{
+    0% {top:0px;}
+    50%{top:-10px}
+}
+.column1{
+    margin-left: 100px;
+}
+.prime{
+    position: relative;
+    left: -50px;
+    margin-bottom: 50px;
+}
+.classic{
+    margin-bottom: 50px;
+    margin-right: 0%;
+}
+.recliner{
+    position: relative;
+    left: -35px;
+}
+.screen{
+    position: relative;
+    left: 500px;
+    top: -100px;
+}
+.screen p{
+    color: lightgray;
+    text-align: center;
+    font-size: large;
+}
+.seats{
+    position: relative;
+    top: -60px;
+}
+.seats h3{
+    color: lightgray;
+    margin-left: 500px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.guide p span{
+    color: lightgray;
+    font-size: large;
+}
+.guide p span svg{
+    margin-right: 20px;
+}
+.guide p .text{
+    margin-right: 50px;
+}
+.guide{
+    position: relative;
+    top: -80px;
+    margin-left: 300px;
+}
+.unavailable{
+    color: gray;
+}
+.priceCalculator{
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    left: 250px;
+    border-radius: 10px;
+    background-color: white;
+    width: 1300px;
+    height: 70px;
+    padding-top: 18px;
+}
+.priceCalculator .seats1{
+    background-color: #025357;
+    color: #03DCB1;
+    border-radius: 10px;
+    padding: 5px;
+    margin-right: 10px;
+}
+.my-custom-class{
+    margin-left: 0%;
+}
