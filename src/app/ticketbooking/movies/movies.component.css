@@ -49,6 +49,7 @@ img{
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    cursor: pointer;
 }
 .likes{
     position: relative;
@@ -155,6 +156,7 @@ a{
     margin-left: 150px;
     margin-right: 200px;
     margin-top: 5px;
+    cursor: pointer;
 }
 .header svg{
     position: relative;
@@ -171,4 +173,8 @@ input{
     border: none;
     padding: 10px;
     padding-left: 70px;
+}
+.filter .active{
+    background-color: #03DCB1;
+    color: #025357;
 }

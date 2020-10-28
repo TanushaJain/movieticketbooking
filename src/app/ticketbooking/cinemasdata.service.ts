@@ -14,7 +14,7 @@ export class CinemasdataService {
   };
   constructor(private http: HttpClient) { }
   getCinemas(){
-    return this.http.get('https://jsonblob.com/api/98d461bc-1440-11eb-82c1-23f8b37c5ca8');
+    return this.http.get('/api/cinemas');
   }
   setDate(date, day,time,address,price){
     this.dates.date=date;

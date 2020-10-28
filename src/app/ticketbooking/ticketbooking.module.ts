@@ -13,6 +13,7 @@ import { CinemasdataService } from './cinemasdata.service';
 import {SeatSelectionComponent} from './seat-selection/seat-selection.component';
 import {NgbPaginationModule, NgbAlertModule,NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     MovieComponent, 
     CinemasComponent, 
     HeaderComponent,
-    SeatSelectionComponent
+    SeatSelectionComponent,
+    NavbarComponent
   ],
   imports: [
 

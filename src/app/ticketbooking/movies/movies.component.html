@@ -1,10 +1,11 @@
 <div class="header">
-    <h3>LOGO</h3>
+    <h3 routerLink="/">LOGO</h3>
     <svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
         <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
       </svg>
   <input class="form-control mr-sm-2" type="search" placeholder=" Search" aria-label="Search" (keyup.enter)="onSearch()" [(ngModel)]="tempSearch">
+  <p routerLink="/login" style="margin-left: 500px;margin-top: 10px; color: white; cursor: pointer;">Login</p>
 </div>
 <div class="body">
     <div class="filter">
@@ -23,13 +24,21 @@
                     <span [ngClass]="{
                         'toggle':language
                     }">Language</span>
-                    <span class="clear">Clear</span>
+                    <span class="clear" (click)="clearLanguage()">Clear</span>
                 </p>
                 <div *ngIf="language" class="pill" style="margin-bottom: 20px;">
-                    <p class="pills">English</p>
-                    <p class="pills">Hindi</p>
-                    <p class="pills">Tamil</p>
-                    <p class="pills">Telugu</p>
+                    <p class="pills" (click)="filter('English',0)" [ngClass]="{
+                        'active':filterLanguage[0]
+                    }">English</p>
+                    <p class="pills" (click)="filter('Hindi',1)"[ngClass]="{
+                        'active':filterLanguage[1]
+                    }">Hindi</p>
+                    <p class="pills" (click)="filter('Tamil',2)" [ngClass]="{
+                        'active':filterLanguage[2]
+                    }">Tamil</p>
+                    <p class="pills" (click)="filter('Telugu',3)" [ngClass]="{
+                        'active':filterLanguage[3]
+                    }">Telugu</p>
                 </div>
             </div>
             <div class="genre">
@@ -45,19 +54,39 @@
                     <span [ngClass]="{
                         'toggle':genre
                     }">Genres</span>
-                    <span class="clear">Clear</span>
+                    <span class="clear" (click)="clearGenre()">Clear</span>
                 </p>
                 <div *ngIf="genre" class="pill"  style="margin-bottom: 20px;">
-                    <p class="pills">Action</p>
-                    <p class="pills">Drama</p>
-                    <p class="pills">Historical</p>
-                    <p class="pills">Romance</p>
-                    <p class="pills">Thriller</p>
-                    <p class="pills">Mystery</p>
-                    <p class="pills">Comedy</p>
-                    <p class="pills">Sci-Fi</p>
-                    <p class="pills">Fantasy</p>
-                    <p class="pills">Crime</p>
+                    <p class="pills" (click)="filterG('Action',0)" [ngClass]="{
+                        'active':filterGenre[0]
+                    }">Action</p>
+                    <p class="pills" (click)="filterG('Drama',1)" [ngClass]="{
+                        'active':filterGenre[1]
+                    }">Drama</p>
+                    <p class="pills" (click)="filterG('Historical',2)" [ngClass]="{
+                        'active':filterGenre[2]
+                    }">Historical</p>
+                    <p class="pills" (click)="filterG('Romance',3)" [ngClass]="{
+                        'active':filterGenre[3]
+                    }">Romance</p>
+                    <p class="pills" (click)="filterG('Thriller',4)" [ngClass]="{
+                        'active':filterGenre[4]
+                    }">Thriller</p>
+                    <p class="pills" (click)="filterG('Mystery',5)" [ngClass]="{
+                        'active':filterGenre[5]
+                    }">Mystery</p>
+                    <p class="pills" (click)="filterG('Comedy',6)" [ngClass]="{
+                        'active':filterGenre[6]
+                    }">Comedy</p>
+                    <p class="pills" (click)="filterG('Sci-Fi',7)" [ngClass]="{
+                        'active':filterGenre[7]
+                    }">Sci-Fi</p>
+                    <p class="pills" (click)="filterG('Fantasy',0)" [ngClass]="{
+                        'active':filterGenre[8]
+                    }">Fantasy</p>
+                    <p class="pills" (click)="filterG('Crime',9)" [ngClass]="{
+                        'active':filterGenre[9]
+                    }">Crime</p>
                 </div>
             </div>
             <div class="format">
@@ -73,11 +102,15 @@
                     <span [ngClass]="{
                         'toggle':format
                     }">Format</span>
-                    <span class="clear">Clear</span>
+                    <span class="clear" (click)="clearFormat()">Clear</span>
                 </p>
                 <div *ngIf="format" class="pill"  style="margin-bottom: 20px;">
-                    <p class="pills">2D</p>
-                    <p class="pills">3D</p>
+                    <p class="pills" (click)="filterF('2D',0)" [ngClass]="{
+                        'active':filterFormat[0]
+                    }">2D</p>
+                    <p class="pills" (click)="filterF('3D',1)" [ngClass]="{
+                        'active':filterFormat[1]
+                    }">3D</p>
                 </div>
             </div>
         </div>
@@ -86,10 +119,10 @@
         <div class="head">
             <p class="title1">Movies in Your City</p>
             <div class="pill">
-                <p class="pills">English</p>
-                <p class="pills">Hindi</p>
-                <p class="pills">Tamil</p>
-                <p class="pills">Telugu</p>
+                <p class="pills" (click)="filter('English',0)">English</p>
+                <p class="pills" (click)="filter('Hindi',1)">Hindi</p>
+                <p class="pills" (click)="filter('Tamil',2)">Tamil</p>
+                <p class="pills" (click)="filter('Telugu',3)">Telugu</p>
             </div>
         </div>
         <div class="movie-names">

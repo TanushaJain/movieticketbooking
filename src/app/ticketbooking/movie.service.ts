@@ -10,10 +10,10 @@ movie$;
   constructor(private http: HttpClient) { }
   getMovies()
   {
-    return this.http.get('https://jsonblob.com/api/66b7ae2b-0dfe-11eb-a6df-73610c6939a8');
+    return this.http.get('/api/movies');
   }
   getMovie(id){
-    return this.http.get(`https://jsonblob.com/api/${id}`);
+    return this.http.get(`/api/movies/${id}`);
   }
   setSearched(movie){
     this.movie$=movie;
@@ -21,5 +21,16 @@ movie$;
   getSearched(){
     if(this.movie$)
     return this.movie$;
+  }
+  getLanguage(language){
+    return this.http.get(`/api/movies/filterLanguage/${language}`);
+  }
+  getGenre(genre)
+  {
+    return this.http.get(`/api/movies/filterGenre/${genre}`);
+  }
+  getFormat(format)
+  {
+    return this.http.get(`/api//movies/filterFormat/${format}`);
   }
 }
