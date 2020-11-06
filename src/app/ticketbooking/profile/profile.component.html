@@ -2,24 +2,24 @@
         <div class="profile-body"> 
            <div class="profile-info">
             <div class="profile-image">
-                <img src="https://www.flaticon.com/svg/static/icons/svg/194/194938.svg" alt="">
+                <img [src]="avatar" alt="">
             </div>
             <div class="details">
-                <p>HI! Ms. XYZ</p>
+                <p>HI! {{person.name}}</p>
                 <p>"The stuff that dreams are made of"-THE MALTESE FALCON(1941)</p>
             </div>
             <div class="about">
                 <h2>About</h2>
                 <div class="about-info">
                     <div>
-                        <p><span>Name:</span> xyz</p>
-                    <p><span>Date of Birth:</span>05/11/2020</p>
-                    <p><span>Age:</span>22</p>
+                        <p><span>Name:</span>{{person.name}}</p>
+                    <p><span>Date of Birth:</span>{{person.dob}}</p>
+                    <p><span>Age:</span>{{person.age}}</p>
                     </div>
                     <div style="position: relative;right: -100px;">
-                        <p><span>Gender:</span>Female</p>
-                    <p><span>Email:</span>abc@gmail.com</p>
-                    <p><span>Contact No.:</span>0123456789</p>
+                        <p><span>Gender:</span>{{person.gender}}</p>
+                    <p><span>Email:</span>{{person.email}}</p>
+                    <p><span>Contact No.:</span>{{person.contact}}</p>
                     </div>
                 </div>
             </div>

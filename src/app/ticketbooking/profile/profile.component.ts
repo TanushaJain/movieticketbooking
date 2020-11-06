@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  person={
+    name:"Ms. XYZ",
+    dob:"05/11/2020",
+    age:22,
+    gender:"Male",
+    email:"abc@gmail.com",
+    contact:"0.123456789"
+  }
+  avatar="";
   rnothing=false;
   mnothing=false;
   rlist=[{
@@ -34,6 +43,14 @@ mtoggle=false;
     if(this.mlist.length==0)
     {
       this.mnothing=true;
+    }
+    if(this.person.gender=="Female")
+    {
+      this.avatar="https://www.flaticon.com/svg/static/icons/svg/3011/3011292.svg";
+    }
+    else
+    {
+      this.avatar="https://www.flaticon.com/svg/static/icons/svg/3011/3011270.svg";
     }
   }
   onToggle(type)
