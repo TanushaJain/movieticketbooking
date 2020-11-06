@@ -1,0 +1,192 @@
+<body class="cover" style="background-image: url('https://i.pinimg.com/originals/b8/dd/fb/b8ddfbb198825156089392b60b25b1ab.jpg');">
+        <div class="profile-body"> 
+           <div class="profile-info">
+            <div class="profile-image">
+                <img src="https://www.flaticon.com/svg/static/icons/svg/194/194938.svg" alt="">
+            </div>
+            <div class="details">
+                <p>HI! Ms. XYZ</p>
+                <p>"The stuff that dreams are made of"-THE MALTESE FALCON(1941)</p>
+            </div>
+            <div class="about">
+                <h2>About</h2>
+                <div class="about-info">
+                    <div>
+                        <p><span>Name:</span> xyz</p>
+                    <p><span>Date of Birth:</span>05/11/2020</p>
+                    <p><span>Age:</span>22</p>
+                    </div>
+                    <div style="position: relative;right: -100px;">
+                        <p><span>Gender:</span>Female</p>
+                    <p><span>Email:</span>abc@gmail.com</p>
+                    <p><span>Contact No.:</span>0123456789</p>
+                    </div>
+                </div>
+            </div>
+            <div class="favorites">
+                <h2>Favourites</h2>
+                <div class="favourite">
+                    <div>
+                        <button (click)="onToggle(type)">{{type}}</button>
+                    </div>
+                    <div class="dropdown">
+                        <h3  (click)="restrauntsToggle()" [ngClass]="{
+                            'open':rtoggle
+                        }">
+                            Restaurants 
+                            <span *ngIf="rtoggle">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                  </svg>
+                            </span>
+                            <span *ngIf="!rtoggle">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                                  </svg>
+                            </span>
+                        </h3>
+                        <div *ngIf="rtoggle" >
+                            <div class="nothing" *ngIf="rnothing">
+                                <svg version="1.1" fill="currentColor" height="5em" width="5em" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 512.267 512.267" style="enable-background:new 0 0 512.267 512.267;" xml:space="preserve">
+                                <path style="fill:#F3F3F3;" d="M379.733,0H26.667C11.733,0,0,11.733,0,26.667V486.4C0,500.267,11.733,512,26.667,512h353.067
+                                    c14.933,0,26.667-11.733,26.667-26.667V26.667C406.4,11.733,394.667,0,379.733,0z"/>
+                                <g>
+                                    <rect x="181.333" y="128" style="fill:#CED6E0;" width="92.8" height="22.4"/>
+                                    <rect x="181.333" y="76.8" style="fill:#CED6E0;" width="161.067" height="22.4"/>
+                                </g>
+                                <rect x="62.933" y="66.133" style="fill:#F3705A;" width="92.8" height="96"/>
+                                <g>
+                                    <rect x="181.333" y="269.867" style="fill:#CED6E0;" width="92.8" height="22.4"/>
+                                    <rect x="181.333" y="218.667" style="fill:#CED6E0;" width="161.067" height="22.4"/>
+                                </g>
+                                <rect x="62.933" y="208" style="fill:#FFD15C;" width="92.8" height="96"/>
+                                <g>
+                                    <rect x="181.333" y="412.8" style="fill:#CED6E0;" width="92.8" height="22.4"/>
+                                    <rect x="181.333" y="360.533" style="fill:#CED6E0;" width="161.067" height="22.4"/>
+                                </g>
+                                <rect x="62.933" y="349.867" style="fill:#66C6B9;" width="92.8" height="96"/>
+                                <rect x="338.385" y="337.526" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 898.7307 371.0509)" style="fill:#344A5E;" width="68.266" height="68.266"/>
+                                <path style="fill:#415A6B;" d="M368,368c-54.4,54.4-142.933,54.4-197.333,0s-54.4-142.933,0-197.333s142.933-54.4,197.333,0
+                                    S422.4,313.6,368,368z M200.533,200.533c-38.4,38.4-38.4,100.267,0,138.667c38.4,38.4,100.267,38.4,138.667,0
+                                    c38.4-38.4,38.4-100.267,0-138.667C299.733,162.133,237.867,162.133,200.533,200.533z"/>
+                                <path style="fill:#F3705A;" d="M497.067,425.6l-57.6-57.6L368,439.467l57.6,57.6c20.267,20.267,52.267,20.267,71.467,0
+                                    C517.333,476.8,517.333,444.8,497.067,425.6z"/>
+                                <rect x="402.133" y="358.352" transform="matrix(0.7071 0.7071 -0.7071 0.7071 409.0322 -169.4552)" style="fill:#F05540;" width="13.867" height="101.332"/>
+                                <path style="fill:#F3705A;" d="M441.6,349.867c-5.333-5.333-13.867-5.333-19.2,0l-71.467,71.467c-5.333,5.333-5.333,13.867,0,19.2
+                                    c5.333,5.333,13.867,5.333,19.2,0l71.467-71.467C446.933,363.733,446.933,355.2,441.6,349.867z"/>
+                                </svg>
+                                <br>
+                                Nothing added to Favourites
+                            </div>
+                            <div *ngIf="!toggle">
+                                <div class="everything" *ngFor="let favorite of rlist">
+                                    <div>
+                                        <img [src]="favorite.file"  alt="">
+                                    </div>
+                                    <div>
+                                        <p class="title">{{favorite.name}}</p>
+                                        <p>{{favorite.about}}</p>
+                                    </div>
+            
+                            </div>
+                            </div>
+                            <div class="everything2" *ngIf="toggle">
+                                <div *ngFor="let favorite of rlist" class="card-div">
+                                    <div class="card" style="width: 18rem;">
+                                        <img class="card-img-top" [src]="favorite.file" alt="Card image cap">
+                                        <div class="card-body">
+                                          <div class="card-text">
+                                            <p class="title1">{{favorite.name}}</p>
+                                        <p style="font-size: small;">{{favorite.about}}</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <h3  (click)="moviesToggle()" [ngClass]="{
+                            'open':mtoggle
+                        }">
+                            Movies 
+                            <span *ngIf="mtoggle">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                  </svg>
+                            </span>
+                            <span *ngIf="!mtoggle">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                                  </svg>
+                            </span>
+                        </h3>
+                        <div *ngIf="mtoggle" >
+                            <div class="nothing" *ngIf="mnothing">
+                                <svg version="1.1" fill="currentColor" height="5em" width="5em" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 512.267 512.267" style="enable-background:new 0 0 512.267 512.267;" xml:space="preserve">
+                                <path style="fill:#F3F3F3;" d="M379.733,0H26.667C11.733,0,0,11.733,0,26.667V486.4C0,500.267,11.733,512,26.667,512h353.067
+                                    c14.933,0,26.667-11.733,26.667-26.667V26.667C406.4,11.733,394.667,0,379.733,0z"/>
+                                <g>
+                                    <rect x="181.333" y="128" style="fill:#CED6E0;" width="92.8" height="22.4"/>
+                                    <rect x="181.333" y="76.8" style="fill:#CED6E0;" width="161.067" height="22.4"/>
+                                </g>
+                                <rect x="62.933" y="66.133" style="fill:#F3705A;" width="92.8" height="96"/>
+                                <g>
+                                    <rect x="181.333" y="269.867" style="fill:#CED6E0;" width="92.8" height="22.4"/>
+                                    <rect x="181.333" y="218.667" style="fill:#CED6E0;" width="161.067" height="22.4"/>
+                                </g>
+                                <rect x="62.933" y="208" style="fill:#FFD15C;" width="92.8" height="96"/>
+                                <g>
+                                    <rect x="181.333" y="412.8" style="fill:#CED6E0;" width="92.8" height="22.4"/>
+                                    <rect x="181.333" y="360.533" style="fill:#CED6E0;" width="161.067" height="22.4"/>
+                                </g>
+                                <rect x="62.933" y="349.867" style="fill:#66C6B9;" width="92.8" height="96"/>
+                                <rect x="338.385" y="337.526" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 898.7307 371.0509)" style="fill:#344A5E;" width="68.266" height="68.266"/>
+                                <path style="fill:#415A6B;" d="M368,368c-54.4,54.4-142.933,54.4-197.333,0s-54.4-142.933,0-197.333s142.933-54.4,197.333,0
+                                    S422.4,313.6,368,368z M200.533,200.533c-38.4,38.4-38.4,100.267,0,138.667c38.4,38.4,100.267,38.4,138.667,0
+                                    c38.4-38.4,38.4-100.267,0-138.667C299.733,162.133,237.867,162.133,200.533,200.533z"/>
+                                <path style="fill:#F3705A;" d="M497.067,425.6l-57.6-57.6L368,439.467l57.6,57.6c20.267,20.267,52.267,20.267,71.467,0
+                                    C517.333,476.8,517.333,444.8,497.067,425.6z"/>
+                                <rect x="402.133" y="358.352" transform="matrix(0.7071 0.7071 -0.7071 0.7071 409.0322 -169.4552)" style="fill:#F05540;" width="13.867" height="101.332"/>
+                                <path style="fill:#F3705A;" d="M441.6,349.867c-5.333-5.333-13.867-5.333-19.2,0l-71.467,71.467c-5.333,5.333-5.333,13.867,0,19.2
+                                    c5.333,5.333,13.867,5.333,19.2,0l71.467-71.467C446.933,363.733,446.933,355.2,441.6,349.867z"/>
+                                </svg>
+                                <br>
+                                Nothing added to Favourites
+                            </div>
+                            <div *ngIf="!toggle">
+                                <div class="everything" *ngFor="let favorite of mlist">
+                                    <div>
+                                        <img [src]="favorite.file"  alt="">
+                                    </div>
+                                    <div>
+                                        <p class="title">{{favorite.name}}</p>
+                                        <p>{{favorite.about}}</p>
+                                    </div>
+            
+                            </div>
+                            </div>
+                            <div class="everything2" *ngIf="toggle">
+                                <div *ngFor="let favorite of mlist" class="card-div">
+                                    <div class="card" style="width: 18rem;">
+                                        <img class="card-img-top" [src]="favorite.file" alt="Card image cap">
+                                        <div class="card-body">
+                                          <div class="card-text">
+                                            <p class="title1">{{favorite.name}}</p>
+                                        <p style="font-size: small;">{{favorite.about}}</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </div>
+        </div>
+
+</body>
+

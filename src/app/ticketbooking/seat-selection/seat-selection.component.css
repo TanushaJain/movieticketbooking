@@ -115,7 +115,7 @@ color: #B0DADA;
     left: 250px;
     border-radius: 10px;
     background-color: white;
-    width: 1300px;
+    width: 1150px;
     height: 70px;
     padding-top: 18px;
 }
@@ -128,4 +128,80 @@ color: #B0DADA;
 }
 .my-custom-class{
     margin-left: 0%;
+}
+.next{
+    position: fixed;
+    bottom: 20px;
+    left: 1450px;
+    background-color: white;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.confirmation{
+    background-color: lightgray;
+    height: 400px;
+    width: 300px;
+    padding: 20px;
+    -moz-box-shadow: 2px 1px 44px grey;
+    -webkit-box-shadow: 2px 1px 44px grey;
+    box-shadow: 2px 1px 44px grey;
+
+
+    margin: auto;
+}
+.circle-left,.circle-right{
+    border-radius: 50%;
+    position: fixed;
+    height: 20px;
+    width: 20px;
+    top: 48%;
+}
+.circle-left{
+    left:40.7%
+}
+.circle-right{
+    right: 40.7%;
+}
+.modal-header,
+.modal-footer{
+    border: none;
+}
+.modal-body{
+    padding: 20px;
+}
+.modal-title{
+    color: #00A86B;
+    font-family: sans-serif;
+    font-size: larger;
+    margin-bottom: 20px;
+}
+.price{
+    position: relative;
+    float: right;
+}
+.confirmation .amount{
+    margin-top: 40px;
+}
+.sub{
+    color: grey;
+}
+.food{
+    margin-top: 40px;
+    margin-left: 80px;   
+    font-size: large;
+}
+.food span{
+    color: #c80815;
+    margin-left: 10px;
+}
+.food-sub{
+    position: relative;
+    top: -20px;
+}
+.food-sub a{
+    color: #c80815;
+}
+.confirmation img{
+    height: 100px;
 }

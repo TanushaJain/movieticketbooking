@@ -11,16 +11,16 @@
                 <div class="date" [ngClass]="{
                     'active':dates.today.isSelected
                 }" value="today" (click)="selectedDate($event)">
-                    <h3 >{{dates.today.date}}</h3>
-                    <p style="position: relative; top: -10px;">{{dates.today.day}}</p>
+                    <h3 style="position: relative; top: 7px;">{{dates.today.date}}</h3>
+                    <p style="position: relative; top: -9px;">{{dates.today.day}}</p>
                 </div>
             </div>
             <div class="col1">
                 <div class="date" value="tomorrow" [ngClass]="{
                     'active':dates.tomorrow.isSelected
                 }" (click)="selectedDate($event)">
-                    <h3 >{{dates.tomorrow.date}}</h3>
-                    <p style="position: relative; top: -10px;">{{dates.tomorrow.day}}</p>
+                    <h3 style="position: relative; top: 7px;">{{dates.tomorrow.date}}</h3>
+                    <p style="position: relative; top: -9px;">{{dates.tomorrow.day}}</p>
                 </div>
             </div>
             <div class="col1 arrow">
@@ -38,11 +38,11 @@
                 <h1 class="box">{{cinema.name}}</h1>
             <p class="box" style="font-size: large;">{{cinema.address}}</p>
             <div class="timings" style="margin-top: 50px; margin-left: 50px;">
-                <button class="time" (click)="time($event,cinema.address,cinema.price)" routerLink="/movies/{{movieName}}/cinemas/{{cinema.name}}" value="10:00" [ngbTooltip]="tipContent">10:00</button>
-                <button class="time" (click)="time($event,cinema.address,cinema.price)" value="13:00" routerLink="/movies/{{movieName}}/cinemas/{{cinema.name}}" [ngbTooltip]="tipContent">13:00</button>
-                <button class="time" (click)="time($event,cinema.address,cinema.price)" value="16:00" routerLink="/movies/{{movieName}}/cinemas/{{cinema.name}}" [ngbTooltip]="tipContent">16:00</button>
-                <button class="time" (click)="time($event,cinema.address,cinema.price)" value="19:00" routerLink="/movies/{{movieName}}/cinemas/{{cinema.name}}" [ngbTooltip]="tipContent">19:00</button>
-                <button class="time" (click)="time($event,cinema.address,cinema.price)" value="21:00" routerLink="/movies/{{movieName}}/cinemas/{{cinema.name}}" [ngbTooltip]="tipContent">21:00</button>
+                <button class="time" (click)="time($event,cinema.address,cinema.price)" routerLink="/movies/explore/{{cityName}}/{{movieName}}/cinemas/{{cinema.name}}" value="10:00" [ngbTooltip]="tipContent">10:00</button>
+                <button class="time" (click)="time($event,cinema.address,cinema.price)" value="13:00" routerLink="/movies/explore/{{cityName}}/{{movieName}}/cinemas/{{cinema.name}}" [ngbTooltip]="tipContent">13:00</button>
+                <button class="time" (click)="time($event,cinema.address,cinema.price)" value="16:00" routerLink="/movies/explore/{{cityName}}/{{movieName}}/cinemas/{{cinema.name}}" [ngbTooltip]="tipContent">16:00</button>
+                <button class="time" (click)="time($event,cinema.address,cinema.price)" value="19:00" routerLink="/movies/explore/{{cityName}}/{{movieName}}/cinemas/{{cinema.name}}" [ngbTooltip]="tipContent">19:00</button>
+                <button class="time" (click)="time($event,cinema.address,cinema.price)" value="21:00" routerLink="/movies/explore/{{cityName}}/{{movieName}}/cinemas/{{cinema.name}}" [ngbTooltip]="tipContent">21:00</button>
                 <ng-template #tipContent>
                     <p>classic: {{cinema.price.classic | currency:'INR':'symbol'}}</p>
                     <p *ngIf="cinema.price.prime">Prime: {{cinema.price.prime | currency:'INR':'symbol'}}</p>   

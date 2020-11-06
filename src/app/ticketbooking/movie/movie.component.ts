@@ -2,7 +2,6 @@ import { newArray } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { from } from 'rxjs';
-import { map, toArray, filter } from 'rxjs/operators';
 import { MovieService } from './../movie.service';
 
 @Component({
@@ -23,16 +22,31 @@ critic=false;
 active=[false,false,false,false,false];
 selected = 0;
   hovered = 0;
+  cityName;
   readonly = false;
   constructor(private movieservice: MovieService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const name=this.route.snapshot.paramMap.get('name');
-    console.log(name);
     this.movieName=name.toString();
    from(this.movieservice.getMovie(this.movieName)).subscribe(response=> {
      this.movie=response;
    });
+   const name1=this.route.snapshot.paramMap.get('city');
+   if(name1)
+    {
+      if(name1==='ncr')
+      {
+        this.cityName="NCR"
+      }
+      else
+      {
+        this.cityName=name1.charAt(0).toUpperCase() + name1.slice(1);
+      }
+    }
+    else{
+      this.cityName="Bangalore";
+    }
   }
   rated(id){
     this.active[id-1]=!this.active[id-1];

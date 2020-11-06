@@ -1,0 +1,143 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+*{
+    color: white;
+}
+.cover{
+    background-position: center;
+    height: 750px;
+    width: 100%;
+    background-size: cover;
+    position: fixed;
+    overflow: scroll;
+}
+.profile-body{
+    margin-top: 150px;
+    border-radius: 10px;
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #434343 74%);
+    border: solid 3px white;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.profile-image{
+    position: relative;
+    left: 43%;
+    top: -80px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.profile-image img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.profile-info .details{
+    margin-top: 30px;
+    text-align: center;
+    font-size: x-large;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.about{
+    margin: 100px 200px 50px 200px;
+}
+.favorites{
+    margin: 50px 200px 0px 200px;
+}
+.about h2 , 
+.favorites h2{
+    margin-left: 50px;
+    border-bottom: solid 2px gray;
+}
+.about .about-info{
+    padding-left: 100px;
+    margin-top: 50px;
+    font-size: large;
+    display: flex;
+    flex-wrap: wrap;
+}
+.about .about-info div{
+    flex-basis: 50%;
+}
+.about .about-info span{
+    font-weight: 500;
+    margin-right: 10px;
+}
+.about .about-info p{
+    margin-bottom: 10px;
+}
+.favorites{
+    padding-bottom: 100px;
+}
+.favorites .nothing{
+    margin-top: 100px;
+    padding-bottom: 100px;
+    color: white;
+    opacity: 0.5;
+    text-align: center;
+}
+.everything {
+    display: flex;
+    border: solid 1px lightgray;
+    border-radius: 10px;
+    margin:30px 150px 50px 50px;
+}
+.everything img{
+    width: 150px;
+    height: 150px;
+}
+.everything p{
+    margin-top: 20x;
+    margin-left: 20px;
+}
+ .title{
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: x-large;
+}
+.everything2{
+    display: flex;
+    margin-top: 30px;
+}
+.everything2 .card-div{
+    margin-left: 80px;
+}
+.card{
+    background-color: transparent;
+    border: solid 2px lightgray;
+}
+.card-body{
+    max-height: 152px;
+    background-color: transparent;
+}
+.everything2 .card-div img{
+    height: 250px;
+}
+.title1{
+    font-size: large;
+    font-weight: 600;
+}
+button{
+    position: relative;
+    float: right;
+    top: -35px;
+    background-color: transparent;
+    border: solid 2px white;
+}
+.favorites .dropdown{
+    margin-top: 50px;
+    margin-left: 50px;
+    border: solid 2px white;
+    border-radius: 5px;
+    padding: 30px;
+}
+.favorites .dropdown span{
+    position: relative;
+    float: right;
+    right: -20px;
+}
+.favorites .open{
+    border-bottom: none;
+}

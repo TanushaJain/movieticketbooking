@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { MovieService } from './../movie.service';
 import{map} from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -10,6 +11,7 @@ import{map} from 'rxjs/operators';
 })
 export class MoviesComponent implements OnInit {
   movie$;
+  loader=true;
   search;
   tempSearch;
   language=true;
@@ -20,10 +22,33 @@ export class MoviesComponent implements OnInit {
   filterFormat=[false,false];
   filterLanguage=[false,false,false,false];
   filterGenre=[false,false,false,false,false,false,false,false,false,false];
-  constructor(private movieService: MovieService) { }
+  cityName;
+  selectedCity=[false,false,false,false,false,false,false];
+  cities=["NCR","Chennai","Mumbai","Chandigarh","Bangalore","Hyderabad","Ahembdabad"];
+  constructor(private movieService: MovieService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     from(this.movieService.getMovies()).pipe(map(movie => this.movie$=movie)).subscribe();
+    const name1=this.route.snapshot.paramMap.get('city');
+    if(name1)
+    {
+      if(name1==='ncr')
+      {
+        this.cityName="NCR"
+      }
+      else
+      {
+        this.cityName=name1.charAt(0).toUpperCase() + name1.slice(1);
+      }
+    }
+    else{
+      this.cityName="Bangalore";
+    }
+    this.selectedCity[this.cities.indexOf(this.cityName)]=true;
+    if(document.readyState)
+    {
+      this.loader=false;
+    }
   }
   toggleLanguage()
   {
@@ -72,6 +97,7 @@ export class MoviesComponent implements OnInit {
     else{
       from(this.movieService.getMovies()).pipe(map(movie => this.movie$=movie)).subscribe();
     }
+    
   }
   filterG(genre,index)
   {
@@ -116,4 +142,8 @@ export class MoviesComponent implements OnInit {
       element=false;
     });
   }
+  city(name){
+    window.location.replace(`movies/explore/${name}`)
+  }
+ 
 }

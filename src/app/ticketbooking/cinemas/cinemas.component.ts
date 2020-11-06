@@ -23,6 +23,7 @@ export class CinemasComponent implements OnInit {
   }
   cinemas$;
   movieName;
+  cityName;
   constructor(private cinemadata: CinemasdataService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -58,7 +59,22 @@ export class CinemasComponent implements OnInit {
     else{
       this.dates.tomorrow.day=this.getDay(day+1);
     }
-    from(this.cinemadata.getCinemas()).pipe(map(cinema => this.cinemas$=cinema)).subscribe(console.log);
+    const name1=this.route.snapshot.paramMap.get('city');
+    if(name1)
+    {
+      if(name1==='ncr')
+      {
+        this.cityName="NCR"
+      }
+      else
+      {
+        this.cityName=name1.charAt(0).toUpperCase() + name1.slice(1);
+      }
+    }
+    else{
+      this.cityName="Bangalore";
+    }
+    from(this.cinemadata.getCinemas(name1)).pipe(map(cinema => this.cinemas$=cinema)).subscribe();
   }
   getDay(day){
     var day1;
@@ -84,7 +100,6 @@ export class CinemasComponent implements OnInit {
     }
   }
   selectedDate(event){
-    console.log(event.target.parentElement.attributes.value.value)
     var selected=event.target.parentElement.attributes.value.value;
     if(selected=="tomorrow")
     {

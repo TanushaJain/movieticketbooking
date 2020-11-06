@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TicketbookingModule } from './ticketbooking/ticketbooking.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   BrowserModule,
     AppRoutingModule,
     TicketbookingModule,
-    NgbModule    
+    NgbModule,
+    BrowserAnimationsModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

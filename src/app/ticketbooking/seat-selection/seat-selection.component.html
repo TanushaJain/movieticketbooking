@@ -9,7 +9,7 @@
                 </div>
                 <div class="detail-header">
                     <h1 style="font-size: 40px;">{{movie.name}}</h1>
-                    <h5 style="margin-top: 20px;">{{date$.address}} 
+                    <h5 style="margin-top: 20px;font-size: 18px;">{{date$.address}} 
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
                           </svg>
@@ -233,7 +233,7 @@
     <div class="row recliner">
         <div class="column1">
             <div class="row" *ngFor="let r of seating[1]">
-                <p style="position: relative;left: -50px;;color: #03DCB1;width: 5px;margin-bottom: 0%;">{{r}}</p>
+                <p style="position: relative;left: -80px;;color: #03DCB1;width: 5px;margin-bottom: 0%;">{{r}}</p>
                 <div class="column" *ngFor="let c of seating[2]">
                     <div (click)="isSelected($event,r,c)">
                         <svg  width="2em" height="2em" fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -273,22 +273,73 @@
   </div>
  
 
-  <div class="container priceCalculator" *ngIf="length1!=0">
-      <p style="font-size: large;margin-right: 15px; color: gray;margin-left: 20px;" [ngbTooltip]="tipContent"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-        <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
-        <circle cx="8" cy="4.5" r="1"/>
-      </svg></p>
-      <p style="font-size: large;margin-right: 30px;">SEAT INFO</p>
-        <div class="row seating" *ngFor="let seat of selected">
-           <div class="col">
-            <p class="seats1">
-                {{seat}}
-            </p>
-           </div>
+  <div class="container" *ngIf="length1!=0">
+    <div class="priceCalculator" >
+        <p style="font-size: large;margin-right: 15px; color: gray;margin-left: 20px;" [ngbTooltip]="tipContent"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+          <circle cx="8" cy="4.5" r="1"/>
+        </svg></p>
+        <p style="font-size: large;margin-right: 30px;">SEAT INFO</p>
+          <div class="row seating" *ngFor="let seat of selected">
+             <div class="col">
+              <p class="seats1">
+                  {{seat}}
+              </p>
+             </div>
+          </div>
+          <p style="font-size: large;margin-right: 30px;position: fixed;right: 500px;bottom:3px;">Total <br> (INR)</p>
+          <p style="font-size: x-large;position: fixed;right: 450px;bottom:15px;">{{total}}</p>
+    </div>
+    <ng-template #tipContent>Seat layout is only for representation.Actual spaces between two seats, space between screen and seats, or screen size may vary from that shown in the representation.</ng-template>
+    <div class="next" (click)="openVerticallyCentered(content)">
+        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="black" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+          </svg>
+    </div>
+    <ng-template #content let-modal>
+        <div style="background-image: url({{movie.file}}); background-size: cover;">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="confirmation">
+                  <span class="circle-left" ></span>
+                  <span class="circle-right" ></span>
+                  <h4 class="modal-title">
+                      Booking Summary
+                  </h4>
+                  <p><span>
+                      {{seatType}}-{{selected}} ( {{length1}} Tickets) <br>
+                      <span class="sub" style="font-size: small;">AUD 1</span>
+                  </span>
+                      <span class="price" style="position: relative; top: -23px;">{{total | currency:'INR':'symbol'}}</span>
+                  </p>
+                  <p class="sub">
+                      Booking fees 
+                      <span class="price">{{38 | currency:'INR':'symbol'}}</span>
+                  </p>
+                  <p class="sub">
+                      <span>Integrated GST(IGST) <br> @ 18%</span>
+                      <span class="price">{{gst |currency:'INR':'symbol'}}</span>
+                  </p>
+                  <h5 class="amount">
+                      Amount Payable
+                      <span class="price">
+                          {{amount | currency:'INR':'symbol'}}
+                      </span>
+                  </h5>
+      
+                  <p class="food">Grab a<span>bite!</span></p>
+                  <p class="food-sub">Prebook Your Meal and <a routerLink="">Save More!</a></p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light" (click)="proceed()">Proceed</button>
+              </div>
         </div>
-        <p style="font-size: large;margin-right: 30px;position: fixed;right: 500px;bottom:3px;">Total <br> (INR)</p>
-        <p style="font-size: x-large;position: fixed;right: 450px;bottom:15px;">{{total}}</p>
+      </ng-template>
   </div>
-  <ng-template #tipContent>Seat layout is only for representation.Actual spaces between two seats, space between screen and seats, or screen size may vary from that shown in the representation.</ng-template>
  

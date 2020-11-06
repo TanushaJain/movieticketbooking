@@ -1,149 +1,191 @@
-<div class="header">
-    <h3 routerLink="/">LOGO</h3>
-    <svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-      </svg>
-  <input class="form-control mr-sm-2" type="search" placeholder=" Search" aria-label="Search" (keyup.enter)="onSearch()" [(ngModel)]="tempSearch">
-  <p routerLink="/login" style="margin-left: 500px;margin-top: 10px; color: white; cursor: pointer;">Login</p>
-</div>
-<div class="body">
-    <div class="filter">
-        <p class="title1">Filter</p>
-        <div class="filters">
-            <div class="language">
-                <p type="button" (click)="toggleLanguage()">
-                    <span [hidden]="!language"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
-                      </svg></span>
-                      <span [hidden]="language">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                          </svg>
-                      </span>
-                    <span [ngClass]="{
-                        'toggle':language
-                    }">Language</span>
-                    <span class="clear" (click)="clearLanguage()">Clear</span>
-                </p>
-                <div *ngIf="language" class="pill" style="margin-bottom: 20px;">
-                    <p class="pills" (click)="filter('English',0)" [ngClass]="{
-                        'active':filterLanguage[0]
-                    }">English</p>
-                    <p class="pills" (click)="filter('Hindi',1)"[ngClass]="{
-                        'active':filterLanguage[1]
-                    }">Hindi</p>
-                    <p class="pills" (click)="filter('Tamil',2)" [ngClass]="{
-                        'active':filterLanguage[2]
-                    }">Tamil</p>
-                    <p class="pills" (click)="filter('Telugu',3)" [ngClass]="{
-                        'active':filterLanguage[3]
-                    }">Telugu</p>
+<div >
+    <div class="header">
+        <h3 routerLink="/">LOGO</h3>
+        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+          </svg>
+      <input class="form-control mr-sm-2" type="search" placeholder=" Search" aria-label="Search" (keyup.enter)="onSearch()" [(ngModel)]="tempSearch">
+      <p routerLink="/login" style="margin-left: 500px;margin-top: 15px; color: white; cursor: pointer;">Login</p>
+      <div ngbDropdown class="city">
+        <button ngbDropdownToggle id="city" class="button">{{cityName}}</button>
+        <div ngbDropdownMenu aria-labelledby="city" class="cities">
+            <p>Popular Cities</p>
+            <div style="display: flex;">
+                <div>
+                    <img style="width: 90px; margin-left: 10px;" (click)="city('ncr')" src="assets/images/Shahruk.png" [ngClass]="{'cityactive': selectedCity[0]}" alt="">
+                    <p (click)="city('ncr')">NCR</p>
                 </div>
-            </div>
-            <div class="genre">
-                <p type="button" (click)="toggleGeners()">
-                    <span [hidden]="!genre"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
-                      </svg></span>
-                      <span [hidden]="genre">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                          </svg>
-                      </span>
-                    <span [ngClass]="{
-                        'toggle':genre
-                    }">Genres</span>
-                    <span class="clear" (click)="clearGenre()">Clear</span>
-                </p>
-                <div *ngIf="genre" class="pill"  style="margin-bottom: 20px;">
-                    <p class="pills" (click)="filterG('Action',0)" [ngClass]="{
-                        'active':filterGenre[0]
-                    }">Action</p>
-                    <p class="pills" (click)="filterG('Drama',1)" [ngClass]="{
-                        'active':filterGenre[1]
-                    }">Drama</p>
-                    <p class="pills" (click)="filterG('Historical',2)" [ngClass]="{
-                        'active':filterGenre[2]
-                    }">Historical</p>
-                    <p class="pills" (click)="filterG('Romance',3)" [ngClass]="{
-                        'active':filterGenre[3]
-                    }">Romance</p>
-                    <p class="pills" (click)="filterG('Thriller',4)" [ngClass]="{
-                        'active':filterGenre[4]
-                    }">Thriller</p>
-                    <p class="pills" (click)="filterG('Mystery',5)" [ngClass]="{
-                        'active':filterGenre[5]
-                    }">Mystery</p>
-                    <p class="pills" (click)="filterG('Comedy',6)" [ngClass]="{
-                        'active':filterGenre[6]
-                    }">Comedy</p>
-                    <p class="pills" (click)="filterG('Sci-Fi',7)" [ngClass]="{
-                        'active':filterGenre[7]
-                    }">Sci-Fi</p>
-                    <p class="pills" (click)="filterG('Fantasy',0)" [ngClass]="{
-                        'active':filterGenre[8]
-                    }">Fantasy</p>
-                    <p class="pills" (click)="filterG('Crime',9)" [ngClass]="{
-                        'active':filterGenre[9]
-                    }">Crime</p>
+                <div>
+                    <img (click)="city('chennai')" style="width: 100px;" src="assets/images/rajini.png" [ngClass]="{'cityactive': selectedCity[1]}" alt="">
+                    <p (click)="city('chennai')">Chennai</p>
                 </div>
-            </div>
-            <div class="format">
-                <p type="button" (click)="toggleFormat()">
-                    <span [hidden]="!format"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
-                      </svg></span>
-                      <span [hidden]="format">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                          </svg>
-                      </span>
-                    <span [ngClass]="{
-                        'toggle':format
-                    }">Format</span>
-                    <span class="clear" (click)="clearFormat()">Clear</span>
-                </p>
-                <div *ngIf="format" class="pill"  style="margin-bottom: 20px;">
-                    <p class="pills" (click)="filterF('2D',0)" [ngClass]="{
-                        'active':filterFormat[0]
-                    }">2D</p>
-                    <p class="pills" (click)="filterF('3D',1)" [ngClass]="{
-                        'active':filterFormat[1]
-                    }">3D</p>
+                <div>
+                    <img (click)="city('mumbai')" style="width: 80px;" src="assets/images/amir.png" [ngClass]="{'cityactive': selectedCity[2]}" alt="">
+                    <p (click)="city('mumbai')">Mumbai</p>
+                </div>
+                <div>
+                    <img (click)="city('chandigarh')" style="width: 80px;" src="assets/images/ayushman.png" [ngClass]="{'cityactive': selectedCity[3]}" alt="">
+                    <p (click)="city('chandigarh')">Chandigarh</p>
+                </div>
+                <div>
+                    <img (click)="city('bangalore')" style="width: 80px;" src="assets/images/deepika.png" [ngClass]="{'cityactive': selectedCity[4]}" alt="">
+                    <p (click)="city('bangalore')">Bangalore</p>
+                </div>
+                <div>
+                    <img (click)="city('hyderabad')" style="width: 70px;" src="assets/images/ravi.png" [ngClass]="{'cityactive': selectedCity[5]}" alt="">
+                    <p (click)="city('hyderabad')">Hyderabad</p>
+                </div>
+                <div>
+                    <img (click)="city('ahemdabad')" style="width: 80px; margin-right: 30px;" [ngClass]="{'cityactive': selectedCity[6]}" src="assets/images/paresh.png" alt="">
+                    <p (click)="city('ahemdabad')">Ahemdabad</p>
                 </div>
             </div>
         </div>
+      </div>
     </div>
-    <div class="movies">
-        <div class="head">
-            <p class="title1">Movies in Your City</p>
-            <div class="pill">
-                <p class="pills" (click)="filter('English',0)">English</p>
-                <p class="pills" (click)="filter('Hindi',1)">Hindi</p>
-                <p class="pills" (click)="filter('Tamil',2)">Tamil</p>
-                <p class="pills" (click)="filter('Telugu',3)">Telugu</p>
-            </div>
-        </div>
-        <div class="movie-names">
-            <div *ngFor="let movie of movie$">
-                <a routerLink="/movies/{{movie.name}}"><img [src]="movie.file" alt="" ></a>
-                <div class="likes">
-                    <p>
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-suit-heart-fill" fill=" #e74c3c" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-                          </svg>
+    <div class="body">
+        <div class="filter">
+            <p class="title1">Filter</p>
+            <div class="filters">
+                <div class="language">
+                    <p type="button" (click)="toggleLanguage()">
+                        <span [hidden]="!language"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                          </svg></span>
+                          <span [hidden]="language">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                              </svg>
+                          </span>
+                        <span [ngClass]="{
+                            'toggle':language
+                        }">Language</span>
+                        <span class="clear" (click)="clearLanguage()">Clear</span>
                     </p>
-                    <p class="like"> {{movie.like}}%</p>
+                    <div *ngIf="language" class="pill" style="margin-bottom: 20px;">
+                        <p class="pills" (click)="filter('English',0)" [ngClass]="{
+                            'active':filterLanguage[0]
+                        }">English</p>
+                        <p class="pills" (click)="filter('Hindi',1)"[ngClass]="{
+                            'active':filterLanguage[1]
+                        }">Hindi</p>
+                        <p class="pills" (click)="filter('Tamil',2)" [ngClass]="{
+                            'active':filterLanguage[2]
+                        }">Tamil</p>
+                        <p class="pills" (click)="filter('Telugu',3)" [ngClass]="{
+                            'active':filterLanguage[3]
+                        }">Telugu</p>
+                    </div>
                 </div>
-                <p class="title"><a routerLink="/movies/{{movie.name}}">{{movie.name}}</a></p>
-                <p class="about">UA</p>
-                <p class="about1">{{movie.language}}</p>
+                <div class="genre">
+                    <p type="button" (click)="toggleGeners()">
+                        <span [hidden]="!genre"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                          </svg></span>
+                          <span [hidden]="genre">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                              </svg>
+                          </span>
+                        <span [ngClass]="{
+                            'toggle':genre
+                        }">Genres</span>
+                        <span class="clear" (click)="clearGenre()">Clear</span>
+                    </p>
+                    <div *ngIf="genre" class="pill"  style="margin-bottom: 20px;">
+                        <p class="pills" (click)="filterG('Action',0)" [ngClass]="{
+                            'active':filterGenre[0]
+                        }">Action</p>
+                        <p class="pills" (click)="filterG('Drama',1)" [ngClass]="{
+                            'active':filterGenre[1]
+                        }">Drama</p>
+                        <p class="pills" (click)="filterG('Historical',2)" [ngClass]="{
+                            'active':filterGenre[2]
+                        }">Historical</p>
+                        <p class="pills" (click)="filterG('Romance',3)" [ngClass]="{
+                            'active':filterGenre[3]
+                        }">Romance</p>
+                        <p class="pills" (click)="filterG('Thriller',4)" [ngClass]="{
+                            'active':filterGenre[4]
+                        }">Thriller</p>
+                        <p class="pills" (click)="filterG('Mystery',5)" [ngClass]="{
+                            'active':filterGenre[5]
+                        }">Mystery</p>
+                        <p class="pills" (click)="filterG('Comedy',6)" [ngClass]="{
+                            'active':filterGenre[6]
+                        }">Comedy</p>
+                        <p class="pills" (click)="filterG('Sci-Fi',7)" [ngClass]="{
+                            'active':filterGenre[7]
+                        }">Sci-Fi</p>
+                        <p class="pills" (click)="filterG('Fantasy',0)" [ngClass]="{
+                            'active':filterGenre[8]
+                        }">Fantasy</p>
+                        <p class="pills" (click)="filterG('Crime',9)" [ngClass]="{
+                            'active':filterGenre[9]
+                        }">Crime</p>
+                    </div>
+                </div>
+                <div class="format">
+                    <p type="button" (click)="toggleFormat()">
+                        <span [hidden]="!format"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                          </svg></span>
+                          <span [hidden]="format">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                              </svg>
+                          </span>
+                        <span [ngClass]="{
+                            'toggle':format
+                        }">Format</span>
+                        <span class="clear" (click)="clearFormat()">Clear</span>
+                    </p>
+                    <div *ngIf="format" class="pill"  style="margin-bottom: 20px;">
+                        <p class="pills" (click)="filterF('2D',0)" [ngClass]="{
+                            'active':filterFormat[0]
+                        }">2D</p>
+                        <p class="pills" (click)="filterF('3D',1)" [ngClass]="{
+                            'active':filterFormat[1]
+                        }">3D</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div *ngIf="available">
-                <h1 style="color:#03AA8E;">NOT AVAILABLE</h1>
-                <button type="button" (click)="reload()">Go Back</button>
+        <div class="movies">
+            <div class="head">
+                <p class="title1">Movies in Your City</p>
+                <div class="pill">
+                    <p class="pills" (click)="filter('English',0)">English</p>
+                    <p class="pills" (click)="filter('Hindi',1)">Hindi</p>
+                    <p class="pills" (click)="filter('Tamil',2)">Tamil</p>
+                    <p class="pills" (click)="filter('Telugu',3)">Telugu</p>
+                </div>
+            </div>
+            <div class="movie-names">
+                <div *ngFor="let movie of movie$">
+                    <a routerLink="/movies/explore/{{cityName}}/{{movie.name}}"><img [src]="movie.file" alt="" ></a>
+                    <div class="likes">
+                        <p>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-suit-heart-fill" fill=" #e74c3c" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                              </svg>
+                        </p>
+                        <p class="like"> {{movie.like}}%</p>
+                    </div>
+                    <p class="title"><a routerLink="/movies/explore/{{cityName}}/{{movie.name}}">{{movie.name}}</a></p>
+                    <p class="about">UA</p>
+                    <p class="about1">{{movie.language}}</p>
+                </div>
+            </div>
+            <div *ngIf="available" class="available">
+                    <h1 style="color:#03AA8E;">NOT AVAILABLE</h1>
+                    <button type="button" (click)="reload()">Go Back</button>
+            </div>
         </div>
     </div>
 </div>
+<div id="preloader" *ngIf="loader">
+    <div id="loader"></div>
+  </div>
+  

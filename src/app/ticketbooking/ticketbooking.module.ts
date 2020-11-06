@@ -11,10 +11,13 @@ import { CinemasComponent } from './cinemas/cinemas.component';
 import { HeaderComponent } from './header/header.component';
 import { CinemasdataService } from './cinemasdata.service';
 import {SeatSelectionComponent} from './seat-selection/seat-selection.component';
-import {NgbPaginationModule, NgbAlertModule,NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
-import { NavbarComponent } from './navbar/navbar.component';
-
+import {NgbPaginationModule, NgbAlertModule,NgbTooltipModule,NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DetailsComponent } from './details/details.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { ProfileComponent } from './profile/profile.component'; 
 @NgModule({
   declarations: [
     TicketbookingComponent,
@@ -23,21 +26,30 @@ import { NavbarComponent } from './navbar/navbar.component';
     CinemasComponent, 
     HeaderComponent,
     SeatSelectionComponent,
-    NavbarComponent
+    DetailsComponent,
+    ProfileComponent
   ],
   imports: [
 
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
     NgbPaginationModule, NgbAlertModule,
     NgbTooltipModule,
     TicketbookingRoutingModule,
+    NgbDropdownModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path:'movies',component:MoviesComponent},
-      {path:'movies/:name', component:MovieComponent},
-      {path:"movies/:name/cinemas", component:CinemasComponent},
-      {path:"movies/:name/cinemas/:cinema",component:SeatSelectionComponent},
+      {path:'profile',component:ProfileComponent},
+      {path:'details',component:DetailsComponent},
+      {path:'movies/explore/:city', component:MoviesComponent},
+      {path:'movies/explore/:city/:name', component:MovieComponent},
+      {path:"movies/explore/:city/:name/cinemas", component:CinemasComponent},
+      {path:"movies/explore/:city/:name/cinemas/:cinema",component:SeatSelectionComponent},
     ])
   ],
   exports:[

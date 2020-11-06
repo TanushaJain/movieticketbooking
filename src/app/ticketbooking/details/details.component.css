@@ -1,0 +1,84 @@
+*{
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+.mat-stepper-horizontal {
+    margin-top: 12px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  ::ng-deep .mat-stepper-horizontal-line{
+    border-top-color: white!important;
+  }
+  form{
+    margin-left: 70px;
+    margin-top: 50px;
+    color: white;
+  }
+  ::ng-deep .mat-form-field-underline {
+    background-color: white !important;
+  }
+  .mat-form-field{
+    margin-right: 100px;
+    width: 350px;
+    color: white;
+  }
+  ::ng-deep .mat-form-field-required-marker ,.mat-step-header .mat-step-label.mat-step-label-active,.mat-step-header .mat-step-label, .mat-step-header .mat-step-optional {
+  color: white;
+}
+  .flex{
+    display: flex;
+  }
+  h4{
+    border-bottom: solid 2px white;
+    width: fit-content;
+    font-weight: 500;
+  }
+  .flex p{
+    margin-right: 100px;
+    width: 200px;
+    font-size: medium;
+    font-weight: 300;
+    font-stretch: expanded;
+  }
+  .flex p span{
+    font-weight: 500;
+  }
+  .details{
+    padding-top: 250px;
+    padding-right: 200px;
+    padding-left: 200px;
+    height: 500px;
+  }
+  input, mat-label, span{
+    font-size: medium;
+    color: white;
+  }
+  button{
+    width: 70px;
+    height: 30px;
+    border-radius: 4px;
+    color: white;
+  }
+  .abc{
+    color: white;
+  }
+  .contact{
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  body{
+    background-image: url(https://i.pinimg.com/originals/40/1d/3c/401d3cfe0aa89be1f82e65c71e1721b0.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 750px;
+  }
+  .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 1.25em;
+    border-color: white !important;
+}
+  img{
+    margin-top: 50px;
+    margin-left: 40%;
+  }

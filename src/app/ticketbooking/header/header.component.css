@@ -1,12 +1,13 @@
 .body{
     background-color: #061B1E;
 }
+.synopsis-banner{
+    
+}
 .movie-header{
     height: 250px;
     filter: blur(8px);
-    position: relative;
-    top: -20px;
-    background-color: (0,0,0.8);
+    box-shadow:100px 200px 200px 10px black inset;
 }
 .movie-image{
     position: relative;
@@ -17,7 +18,7 @@
 .detail-header{
 position: relative;
 left: 330px;
-top: -510px;
+top: -470px;
 color: #B0DADA;
 }
 .certificate{

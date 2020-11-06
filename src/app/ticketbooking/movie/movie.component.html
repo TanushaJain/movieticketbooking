@@ -46,9 +46,9 @@
                             </div> 
                             <p style="color: #03AA8E;">RATE IT</p>
                         </div>
-                    <button class="button1" routerLink="/movies/{{movieName}}/cinemas">Book Tickets</button>
+                    <button class="button1" routerLink="/movies/explore/{{cityName}}/{{movieName}}/cinemas">Book Tickets</button>
                     </div>
-                    <div class="row">
+                    <div class="row flex">
                         <div class="summaries">
                             <ul>
                                 <li (click)="toggleSummary()" [ngClass]="{
@@ -68,6 +68,10 @@
                             <div [hidden]="summary" class="summary">
                                 <h3>No Reviews Yet</h3>
                             </div>
+                        </div>
+                        <div class="col">
+                            <img src="assets/images/foodbanner.gif" style="width: 400px;margin-left: 50px;margin-top: 250px;" alt="">
+                            <img src="assets/images/flixbanner.png" style="width: 400px;margin-left: 50px;margin-top: 100px;" alt="">
                         </div>
                     </div>
                     <div class="row" style="
