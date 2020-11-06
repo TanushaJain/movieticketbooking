@@ -23,7 +23,7 @@ date$;
 seating;
 selected=[];
 total=0;
-isClassic=true;
+isClassic=false;
 length1=0;
 seatType;
 amount;
@@ -130,7 +130,7 @@ gst;
     this.seatType="";
     }
     this.gst=this.total*0.18;
-    this.amount=this.total+this.gst;
+    this.amount=this.total+this.gst+38;
     this.length1=this.selected.length;
   }  
   openVerticallyCentered(content) {

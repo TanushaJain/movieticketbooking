@@ -10,7 +10,7 @@ export class ProfileComponent implements OnInit {
     name:"Ms. XYZ",
     dob:"05/11/2020",
     age:22,
-    gender:"Male",
+    gender:"Female",
     email:"abc@gmail.com",
     contact:"0.123456789"
   }

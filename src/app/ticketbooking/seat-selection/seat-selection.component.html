@@ -5,7 +5,6 @@
                 <div class="synopsis-banner">
                     <div class="movie-header" style="background-image: url({{movie.file}}); background-size: cover; background-position-y:bottom;">
                     </div>
-                    <div class=".__overlay"></div>
                 </div>
                 <div class="detail-header">
                     <h1 style="font-size: 40px;">{{movie.name}}</h1>
@@ -125,9 +124,9 @@
     </div>
     <h3>Prime (99.00)</h3>
     <div class="row classic">
-        <div class="column1">
+        <div class="column1" style="margin-left: 170px;">
             <div class="row" *ngFor="let r of seating[1]">
-                <p style="position: relative;left: -50px;;color: #03DCB1;width: 5px;margin-bottom: 0%;">{{r}}</p>
+                <p style="position: relative;left: -70px;;color: #03DCB1;width: 5px;margin-bottom: 0%;">{{r}}</p>
                 <div class="column" *ngFor="let c of seating[5]">
                     <div (click)="isSelected($event,r,c)" >
                         <svg  width="2em" height="2em" fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -166,7 +165,7 @@
     </div>
     <h3>Recliner (149.00)</h3>
     <div class="row recliner">
-        <div class="column1">
+        <div class="column1" style="margin-left: 170px;">
             <div class="row" *ngFor="let r of seating[2]">
                 <p style="position: relative;left: -50px;;color: #03DCB1;width: 5px;margin-bottom: 0%;">{{r}}</p>
                 <div class="column" *ngFor="let c of seating[7]">
@@ -233,7 +232,7 @@
     <div class="row recliner">
         <div class="column1">
             <div class="row" *ngFor="let r of seating[1]">
-                <p style="position: relative;left: -80px;;color: #03DCB1;width: 5px;margin-bottom: 0%;">{{r}}</p>
+                <p style="position: relative;left: -20px;;color: #03DCB1;width: 5px;margin-bottom: 0%;">{{r}}</p>
                 <div class="column" *ngFor="let c of seating[2]">
                     <div (click)="isSelected($event,r,c)">
                         <svg  width="2em" height="2em" fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -280,7 +279,7 @@
           <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
           <circle cx="8" cy="4.5" r="1"/>
         </svg></p>
-        <p style="font-size: large;margin-right: 30px;">SEAT INFO</p>
+        <p style="font-size: large;margin-right: 30px;position: relative;top: 5px;">SEAT INFO</p>
           <div class="row seating" *ngFor="let seat of selected">
              <div class="col">
               <p class="seats1">
@@ -288,8 +287,8 @@
               </p>
              </div>
           </div>
-          <p style="font-size: large;margin-right: 30px;position: fixed;right: 500px;bottom:3px;">Total <br> (INR)</p>
-          <p style="font-size: x-large;position: fixed;right: 450px;bottom:15px;">{{total}}</p>
+          <p style="font-size: large;margin-right: 30px;position: fixed;right: 450px;bottom:12px;">Total <br> (INR)</p>
+          <p style="font-size: x-large;position: fixed;right: 400px;bottom:25px;">{{total}}</p>
     </div>
     <ng-template #tipContent>Seat layout is only for representation.Actual spaces between two seats, space between screen and seats, or screen size may vary from that shown in the representation.</ng-template>
     <div class="next" (click)="openVerticallyCentered(content)">
